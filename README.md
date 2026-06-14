@@ -31,7 +31,7 @@ Why split it that way? An agent improvising five steps at 90% accuracy each fini
 workflows/         The SOPs — export-xml, diff-review, patch-apply, scaffold-file
 scripts/           The pipeline (six chained tools) + the scaffolder + 131 tests
 specs/             Example build spec (crm.json) for the scaffolder
-resources/         Note on the starter file new builds grow from (you supply one)
+resources/         fmbase.fmp12 — a small starter file new builds grow from
 docs/              Non-technical summary, the patchability matrix, the concept piece
 webviewer/crm/     An example React web app built into a .fmp12 via ProofKit
 CLAUDE.md          Agent instructions (the framework rules)
@@ -66,7 +66,7 @@ apply_patch.py  apply   backup -> validate -> smoke -> apply
 gen_scaffold.py verify  expected.json + re-export -> spec coverage check
 ```
 
-Building from scratch is just patching an empty file. Same machinery, pointed at a small starter file you supply. The `webviewer/crm/` folder is an example of the last step: a React web app deployed into a web viewer *inside* the .fmp12 via [ProofKit](https://proofkit.proof.sh), so a finished solution is modern UI plus FileMaker data in one file.
+Building from scratch is just patching an empty file. Same machinery, pointed at `resources/fmbase.fmp12`, a small generic base. The `webviewer/crm/` folder is an example of the last step: a React web app deployed into a web viewer *inside* the .fmp12 via [ProofKit](https://proofkit.proof.sh), so a finished solution is modern UI plus FileMaker data in one file.
 
 ---
 
@@ -116,7 +116,7 @@ The tests that need the Claris CLI tools skip gracefully when they aren't presen
 .venv/bin/python scripts/apply_patch.py prod.fmp12 patch.xml       # backup, rehearse, apply, verify
 
 # Build a new file from a spec
-.venv/bin/python scripts/gen_scaffold.py gen specs/crm.json your-starter.fmp12 -o patch.xml
+.venv/bin/python scripts/gen_scaffold.py gen specs/crm.json resources/fmbase.fmp12 -o patch.xml
 ```
 
 Read the matching file in `workflows/` before running a workflow. Each one carries the gotchas earlier runs turned up. Never skip the validate -> smoke -> apply -> verify sequence.
