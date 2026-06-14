@@ -33,7 +33,7 @@ scripts/           The pipeline (six chained tools) + the scaffolder + 131 tests
 specs/             Example build spec (crm.json) for the scaffolder
 resources/         fmbase.fmp12 — a small starter file new builds grow from
 docs/              Non-technical summary, the patchability matrix, the concept piece
-webviewer/crm/     An example React web app built into a .fmp12 via ProofKit
+webviewer/crm/     An example React web app built into a .fmp12 via ProofKit (proofkit.proof.sh)
 CLAUDE.md          Agent instructions (the framework rules)
 ```
 
