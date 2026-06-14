@@ -1,0 +1,8 @@
+{
+  "ui": "shadcn",
+  "appType": "webviewer",
+  "envFile": ".env",
+  "dataSources": [],
+  "replacedMainPage": false,
+  "registryTemplates": []
+}

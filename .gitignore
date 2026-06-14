@@ -1,0 +1,30 @@
+# Secrets
+.env
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+.tmp/
+
+# Carbon Copy Cloner artifacts (from file-level machine sync)
+_CCC SafetyNet/
+
+# Pipeline working dirs (client schema + binaries stay out of git)
+sandbox/
+snapshots/
+backups/
+builds/
+.venv/
+.pytest_cache/
+.claude/*
+!.claude/skills/
+
+# Webviewer dev workspaces (deployable artifact lives inside the FM file)
+webviewer/*/node_modules/
+webviewer/*/dist/

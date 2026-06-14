@@ -1,0 +1,22 @@
+{
+	"$schema": "https://proofkit.proof.sh/typegen-config-schema.json",
+	"config": {
+		"type": "fmdapi",
+		"path": "./src/config/schemas/filemaker",
+		"clearOldFiles": true,
+		"clientSuffix": "Layout",
+		"validator": "zod/v4",
+		"webviewerScriptName": "ExecuteDataApi",
+		"fmMcp": {
+			"enabled": true,
+			"baseUrl": "http://127.0.0.1:1365",
+			"connectedFileName": "CRM"
+		},
+		"layouts": [
+			// Generator-owned full-field layouts from the scaffolder — they ARE the API layouts.
+			{ "layoutName": "Accounts", "schemaName": "Accounts" },
+			{ "layoutName": "Contacts", "schemaName": "Contacts" },
+			{ "layoutName": "Projects", "schemaName": "Projects" }
+		]
+	}
+}
